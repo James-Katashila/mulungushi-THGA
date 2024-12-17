@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="popup" id="popup">
+            <!-- <img src="img/image5.jpg" alt="Success Image">  -->
+            <h1>Zikomo!!!</h1>
+            <p>Your message has been successfully submitted</p>
+            <button type="button" onclick="redirectToIndex()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Reference to the popup
+        let popup = document.getElementById("popup");
+
+        // Function to show the popup
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+
+        // Function to redirect to the index.html page
+        function redirectToIndex() {
+            window.location.href = "index.html";
+        }
+
+        // Automatically show the popup when the page loads
+        window.onload = openPopup;
+    </script>
+
+    <style>  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+    width: fit-content%;
+    height: 130vh;
+    background: url('img/image5.jpg') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+        .popup {
+            width: 300px;
+            background: rgb(126, 150, 128);
+            border-radius: 6px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #252824;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        .open-popup {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .popup img {
+            width: 200px;
+            margin-top: -40px;
+            border-radius: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup h1 {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 30px 0 10px;
+        }
+
+        .popup button {
+            width: 25%;
+            margin-top: 40px;
+            padding: 10px 0;
+            background: #252824;
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 22px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</body>
+</html>
